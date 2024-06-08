@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
  
       - name: Login to docker hub
-        run:  docker login -u ${{ secrets.DOCKER_USERNAME }} -p dckr_pat_ICLqRUbjZevWm4bWAmj7fpm7MzE
+        run:  docker login -u adlane95 -p dckr_pat_ICLqRUbjZevWm4bWAmj7fpm7MzE
       - name: Build docker image
         run: docker build -t adlane95/websocket-server:latest .
       - name: Publish image to docker hub
@@ -24,7 +24,7 @@ jobs:
     runs-on: self-hosted   
     steps:  
       - name: Login to docker hub
-        run: sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p dckr_pat_ICLqRUbjZevWm4bWAmj7fpm7MzE
+        run: sudo docker login -u adlane95 -p dckr_pat_ICLqRUbjZevWm4bWAmj7fpm7MzE
 
       - name: Pull image from docker hub
         run: sudo docker pull adlane95/websocket-server:latest
